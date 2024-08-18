@@ -17,17 +17,10 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/arc_2" />
 
-    <!-- Título Principal -->
-
-    <!-- Botón Escuchar -->
-
-    <!-- Botón Hablar -->
-
-    <!-- Imagen decorativa -->
 
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/img_logout"
         android:layout_width="62dp"
         android:layout_height="55dp"
         app:layout_constraintBottom_toTopOf="@+id/user_name_view"
@@ -42,7 +35,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="136dp"
-        android:text="TalkApp - Home"
         android:textAlignment="center"
         android:textColor="#232c98"
         android:textSize="24sp"

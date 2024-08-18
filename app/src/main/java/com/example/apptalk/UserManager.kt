@@ -34,8 +34,9 @@ object UserManager {
         return users.size
     }
 
-
-
+    fun delUserLog(){
+        user_log = User()
+    }
 
 }
 
