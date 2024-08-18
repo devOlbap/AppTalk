@@ -43,7 +43,7 @@ class ActivityLogin : AppCompatActivity() {
             if (user != null) {
 
                 UserManager.setUserLog(user)
-
+                Toast.makeText(this, "Bienvenid@ "+user.username+" !", Toast.LENGTH_SHORT).show()
                 val intent_h = Intent(this, ActivityHome::class.java)
                 startActivity(intent_h)
                 finish()
