@@ -20,23 +20,46 @@ object UserManager {
     fun getUsers(): List<User> {
         return users
     }
+    fun getUserByUsernameAndEmail(email: String, username: String): User? {
+        return users.find { it.email == email && it.username == username }
+    }
+    fun getCountUsers():Int{
+        return users.size
+    }
+    fun setNewPassword(id: Int, newPassword: String): Boolean {
+        val user = getUserById(id)
+        return if (user != null) {
+            val updatedUser = user.copy(password = newPassword)
+            val index = users.indexOf(user)
+            if (index != -1) {
+                users[index] = updatedUser
+                true
+            } else {
+                false
+            }
+        } else {
+            false
+        }
+    }
 
-    fun addUser(email: String, password: String, username: String, id : Int) {
-        val newUser = User(email, password, username, id)
-        users.add(newUser)
+
+    fun getUserById(id:Int): User? {
+        return users.find { it.id == id  }
     }
 
     fun findUser(email: String, password: String): User? {
         return users.find { it.email == email && it.password == password }
     }
 
-    fun getCountUsers():Int{
-        return users.size
+    fun addUser(email: String, password: String, username: String, id : Int) {
+        val newUser = User(email, password, username, id)
+        users.add(newUser)
     }
-
     fun delUserLog(){
         user_log = User()
     }
+
+
 
 }
 
