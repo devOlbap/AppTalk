@@ -56,7 +56,7 @@ class ActivityLogin : AppCompatActivity() {
 
         val btn_recover_pass : TextView = findViewById(R.id.recover_pass)
 
-
+        btn_recover_pass.text = "¿Olvidaste tu contraseña?"
 
         btn_recover_pass.setOnClickListener{
             val intent_h = Intent(this, RecoveryActivity::class.java)

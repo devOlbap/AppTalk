@@ -10,9 +10,16 @@ object UserManager {
 
     private var user_log: User = User()
 
+    private var id_user_recover : Int = 0
+
     fun setUserLog(user:User){
         user_log = user
     }
+
+    fun setUserRecoverId(user:User){
+        id_user_recover = user.id
+    }
+
     fun getUserLog():User{
         return user_log
     }

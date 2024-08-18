@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".ActivityLogin">
 
-    <!-- Curva Superior -->
     <ImageView
         android:id="@+id/arcTop"
         android:layout_width="0dp"
@@ -92,11 +91,7 @@
         app:layout_constraintTop_toBottomOf="@+id/arcTop"
         app:srcCompat="?attr/homeAsUpIndicator"
         tools:layout_editor_absoluteX="0dp" />
-    <!-- Campo de Contraseña -->
 
-    <!-- Botón de Iniciar Sesión -->
-
-    <!-- Curva Inferior -->
     <ImageView
         android:id="@+id/arcBottom"
         android:layout_width="0dp"
@@ -112,8 +107,11 @@
         android:id="@+id/recover_pass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="¿Olvidaste tu contraseña?"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/arcBottom"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/arcBottom"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_login_user" />
 
