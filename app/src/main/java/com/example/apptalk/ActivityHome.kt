@@ -1,7 +1,10 @@
 package com.example.apptalk
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -18,17 +21,25 @@ class ActivityHome : AppCompatActivity() {
             insets
         }
 
+        if(UserManager.getUserLog().username.isEmpty()){
+            logout()
+        }
+
         val user_log = UserManager.getUserLog()
-
-        val user_name_view :TextView = findViewById(R.id.user_name_view)
-
-        val msj = "Bienvenid@ "+user_log.username+"! Sientete libre de comunicarte con quien quieras sin problemas"
-
+        val user_name_view: TextView = findViewById(R.id.user_name_view)
+        val msj = "Sé libre de comunicarte! :)"
         user_name_view.text = msj
 
+        val logout_btn: ImageView = findViewById(R.id.img_logout)
+        logout_btn.setOnClickListener {
+            logout()
+        }
+    }
 
-
-
-
+    private fun logout() {
+        UserManager.delUserLog()
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }
