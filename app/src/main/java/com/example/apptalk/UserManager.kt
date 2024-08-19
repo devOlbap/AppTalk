@@ -2,7 +2,7 @@ package com.example.apptalk
 
 object UserManager {
     private val users = mutableListOf(
-        User("admin@gmail.com", "admin123", "admin", 1),
+        User("admin@gmail.com", "123", "admin", 1),
         User("pauli@gmail.com", "pauli123", "pauli", 2),
         User("olbap@gmail.com", "olbap123", "olbap", 3)
     )
@@ -11,6 +11,11 @@ object UserManager {
     private var user_log: User = User()
 
     private var id_user_recover : Int = 0
+
+
+    fun getRecoverIdUser():Int{
+        return id_user_recover
+    }
 
     fun setUserLog(user:User){
         user_log = user
